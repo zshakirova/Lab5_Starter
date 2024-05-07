@@ -9,7 +9,7 @@ function init() {
   const audioElement = document.querySelector('#expose audio');
   const imageElement = document.querySelector('#expose img');
   const volumeIcon = document.querySelector('#volume-controls img');
-  const jsConfetti = new JSConfetti(); // Assuming JSConfetti is globally available
+  const jsConfetti = new JSConfetti(); 
 
   hornSelect.addEventListener('change', function() {
     updateHorn(hornSelect.value);
