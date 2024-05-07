@@ -6,10 +6,10 @@ function init() {
   const pressToTalkButton = document.querySelector('#explore button');
   const faceImage = document.querySelector('#explore img');
 
-
+  // Check if Speech Synthesis is supported by the browser
   if ('speechSynthesis' in window) {
-    loadVoices(); 
-    speechSynthesis.onvoiceschanged = loadVoices; 
+    loadVoices(); // Initially load voices
+    speechSynthesis.onvoiceschanged = loadVoices; // Update voices when they change
 
     pressToTalkButton.addEventListener('click', speakText);
   } else {
@@ -18,7 +18,7 @@ function init() {
 
   function loadVoices() {
     const voices = speechSynthesis.getVoices();
-    voiceSelect.innerHTML = ''; 
+    voiceSelect.innerHTML = ''; // Clear existing options
     voices.forEach(voice => {
       const option = document.createElement('option');
       option.value = voice.name;
